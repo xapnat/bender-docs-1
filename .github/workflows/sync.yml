@@ -1,0 +1,45 @@
+name: Sync Bender Docs
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
+      - '.gitignore'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, '[SYNC]') }}
+
+    steps:
+      - name: Checkout bender-docs
+        uses: actions/checkout@v4
+
+      - name: Copy docs to bender and push
+        env:
+          BENDER_DIR: ${{ runner.temp }}/bender
+        run: |
+          git config --global user.name "Bender Sync"
+          git config --global user.email "actions@bender.best"
+
+          git clone https://x-access-token:${{ secrets.BENDER_SYNC_TOKEN }}@github.com/vibranceltd/bender.git "$BENDER_DIR"
+
+          mkdir -p "$BENDER_DIR/apps/docs/content/docs"
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='README.md' \
+            --exclude='.gitignore' \
+            ./ "$BENDER_DIR/apps/docs/content/docs/"
+
+          cd "$BENDER_DIR"
+          git add apps/docs/content/docs
+
+          if git diff --cached --quiet; then
+            echo "No changes to sync."
+          else
+            git commit -m "[SYNC] Synced from Public Repository"
+            git push
+          fi

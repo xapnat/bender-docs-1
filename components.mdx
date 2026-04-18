@@ -1,0 +1,183 @@
+---
+title: Components
+description: Overview of all available MDX components for documentation.
+icon: fa-solid fa-puzzle-piece
+order: 3
+---
+
+## Callout
+
+Colored hint boxes with icon. Available types: `info`, `tip`, `warning`, `error`, `success`.
+
+<Callout type="info">
+  This is an informational callout. Use it to highlight important details.
+</Callout>
+
+<Callout type="tip">
+  You can use callouts to share tips and best practices with your readers.
+</Callout>
+
+<Callout type="warning">
+  Be careful — this action cannot be undone.
+</Callout>
+
+<Callout type="error">
+  Something went wrong. Please check your configuration.
+</Callout>
+
+<Callout type="success">
+  Your changes have been saved successfully.
+</Callout>
+
+## Tabs
+
+Tabbed content for showing code in multiple languages or different approaches.
+
+<Tabs items={["JavaScript", "TypeScript", "Python"]}>
+  <Tab>
+    ```js
+    const greeting = "Hello, World!";
+    console.log(greeting);
+    ```
+  </Tab>
+  <Tab>
+    ```ts
+    const greeting: string = "Hello, World!";
+    console.log(greeting);
+    ```
+  </Tab>
+  <Tab>
+    ```python
+    greeting = "Hello, World!"
+    print(greeting)
+    ```
+  </Tab>
+</Tabs>
+
+## Steps
+
+Numbered step-by-step instructions with a vertical timeline.
+
+<Steps>
+  <Step title="Install Bender">
+    Add the bot to your Discord server using the invite link on bender.best.
+  </Step>
+  <Step title="Open the Dashboard">
+    Navigate to the Dashboard and select your server from the list.
+  </Step>
+  <Step title="Configure Features">
+    Enable and customize the features you want — leveling, moderation, economy, and more.
+  </Step>
+</Steps>
+
+## Card Grid
+
+Feature cards in a responsive grid layout. Cards can optionally link to other pages.
+
+<CardGrid>
+  <Card title="Economy" icon="fa-solid fa-coins" href="/getting-started">
+    Full currency system with gambling, businesses, and a stock market.
+  </Card>
+  <Card title="Leveling" icon="fa-solid fa-chart-line" href="/commands">
+    XP-based leveling system with custom rewards and role assignments.
+  </Card>
+  <Card title="Moderation" icon="fa-solid fa-shield-halved">
+    Auto-moderation, warnings, mutes, bans, and detailed logging.
+  </Card>
+  <Card title="Tickets" icon="fa-solid fa-ticket">
+    Support ticket system with panels, topics, and transcripts.
+  </Card>
+</CardGrid>
+
+## Accordion
+
+Collapsible sections for FAQs or optional details.
+
+<Accordion>
+  <AccordionItem title="How do I change the command prefix?">
+    Go to your server's Dashboard, navigate to Settings, and update the prefix field. The default prefix is !.
+  </AccordionItem>
+  <AccordionItem title="Can I use Bender on multiple servers?">
+    Yes! Bender can be added to as many servers as you want. Each server has its own independent configuration.
+  </AccordionItem>
+  <AccordionItem title="Is Bender free to use?">
+    Bender is free for all core features. Premium features like custom branding and priority support are available with a subscription.
+  </AccordionItem>
+</Accordion>
+
+## Badge
+
+Inline status labels. Available variants: `default`, `info`, `success`, `warning`, `error`.
+
+- This command is <Badge variant="success">New</Badge> in the latest update.
+- Requires <Badge variant="warning">Admin</Badge> permissions to use.
+- This feature is <Badge variant="error">Deprecated</Badge> and will be removed.
+- Available in <Badge variant="info">Beta</Badge> for testing.
+- Status: <Badge>Stable</Badge>
+
+## Image
+
+Images are always centered and fill the available width. Use `size` to control the max-width.
+
+**Props:** `size` (`sm` | `md` | `lg` | `full` or CSS value), `caption`, `description` (adds a frame), `rounded`, `noRadius`.
+
+<Image src="/images/icon.png" alt="Bender Logo" size="sm" caption="Small" />
+
+<Image src="/images/icon.png" alt="Bender Logo" size="sm" description="The Bender bot logo — used across all platforms and branding materials." />
+
+## Image Carousel
+
+Multiple images with left/right navigation and dot indicators.
+
+**Props:** `size` (`sm` | `md` | `lg` | `full` or CSS value), `noPadding` (edge-to-edge), `noRadius`.
+
+<ImageCarousel size="sm">
+  <CarouselSlide src="/images/icon.png" alt="Slide 1" />
+  <CarouselSlide src="/images/icon.png" alt="Slide 2" />
+  <CarouselSlide src="/images/icon.png" alt="Slide 3" />
+</ImageCarousel>
+
+## Advanced Markdown
+
+Examples of standard Markdown features that are styled by the prose system.
+
+### Inline formatting
+
+This is **bold text**, *italic text*, and `inline code`. You can also use [links](https://bender.best) and ~~strikethrough~~.
+
+### Blockquote
+
+> This is a blockquote. It's useful for highlighting quotes or important notes that don't need the full callout treatment.
+
+### Lists
+
+1. First item in the list
+2. Second item with more detail
+3. Third item to wrap things up
+
+- Supports nested items
+- Easy to scan content
+- Works great for feature lists
+
+### Table
+
+| Feature       | Free | Premium |
+|---------------|------|---------|
+| Leveling      | Yes  | Yes     |
+| Economy       | Yes  | Yes     |
+| Custom Branding | No | Yes     |
+| Priority Support | No | Yes   |
+
+### Code block
+
+```ts
+import { Client } from "discord.js";
+
+const client = new Client({ intents: ["Guilds"] });
+
+client.on("ready", () => {
+  console.log(`Logged in as ${client.user?.tag}`);
+});
+
+client.login(process.env.TOKEN);
+```
