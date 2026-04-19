@@ -1,0 +1,119 @@
+---
+title: Security
+description: Protect your server with antinuke, antiraid, and AI-assisted moderation safeguards.
+icon: fa-solid fa-shield-halved
+order: 4
+---
+
+The **Security** section helps protect your server from destructive admin abuse, raid behavior, suspicious join patterns, and harmful message content.
+
+<CardGrid>
+  <Card title="Antinuke" icon="fa-solid fa-lock">
+    Monitor risky admin actions and automatically react when thresholds are exceeded.
+  </Card>
+  <Card title="Antiraid" icon="fa-solid fa-user-shield">
+    Detect mass joins and risky accounts before they disrupt your server.
+  </Card>
+  <Card title="AI Moderation" icon="fa-solid fa-robot">
+    Scan messages for harmful content and route detections to staff for review or action.
+  </Card>
+</CardGrid>
+
+## Antinuke
+
+Antinuke watches for dangerous actions like channel deletion, role deletion, or mass bans.
+
+- Enable or disable Antinuke from the configuration section.
+- Set a log channel for Antinuke alerts.
+- Add Antinuke admin roles or users that should bypass restrictions.
+- Configure protected actions from the **Roles**, **Server**, and **Special** tabs.
+- Add up to three rules per action, each with a threshold, time window, punishment, and optional undo behavior.
+- Whitelist specific roles or users for an action when their activity should not count toward a rule.
+
+The **Roles** tab covers role creation, deletion, editing, and role assignment changes. The **Server** tab covers channel creation or deletion, bans, kicks, and emoji creation or deletion. The **Special** tab includes Vanity URL changes and Bot Protection, which can automatically kick newly joined bots unless they are on a whitelisted bot ID list.
+
+<ImageCarousel size="sm">
+  <CarouselSlide src="/assets/images/dashboard/security-antinuke-1.png" alt="Antinuke Page (1)" />
+  <CarouselSlide src="/assets/images/dashboard/security-antinuke-2.png" alt="Antinuke Page (2)" />
+  <CarouselSlide src="/assets/images/dashboard/security-antinuke-3.png" alt="Antinuke Page (3)" />
+  <CarouselSlide src="/assets/images/dashboard/security-antinuke-4.png" alt="Antinuke Page (4)" />
+  <CarouselSlide src="/assets/images/dashboard/security-antinuke-5.png" alt="Antinuke Page (5)" />
+</ImageCarousel>
+
+## Antiraid
+
+Antiraid is designed for mass-join events and other suspicious bursts of activity.
+
+- Enable or disable Antiraid and choose a log channel.
+- Configure **Mass Join Detection** with a join threshold, time window, punishment, and target mode.
+- Choose whether mass-join punishments apply only to members over the limit or to all accounts involved in the raid window.
+- Lock the server during a raid by assigning a configured role.
+- Enable auto-punishment during an active raid.
+- Punish accounts with no avatar when that is a useful risk signal for your server.
+- Set a minimum account age and punishment for accounts younger than that limit.
+
+<ImageCarousel size="sm">
+  <CarouselSlide src="/assets/images/dashboard/security-antiraid-1.png" alt="Antiraid Page (1)" />
+  <CarouselSlide src="/assets/images/dashboard/security-antiraid-2.png" alt="Antiraid Page (2)" />
+</ImageCarousel>
+
+## AI Moderation
+
+AI Moderation adds an extra review layer for harmful content so your team can catch issues faster without manually reading every message.
+
+### Configuration
+
+- Turn scanning on or off for the server.
+- Pick a log channel for flags, deletions, and review actions.
+- Set the maximum number of checks per minute to control how much content is processed.
+- Set exceptions for channels, roles, or users that should not be scanned.
+- Use exceptions for staff-only channels, trusted automation, or areas where message scanning is not appropriate.
+
+<Image src="/assets/images/dashboard/security-ai-moderation-1.png" alt="AI-Moderation Page" size="sm"/>
+
+### Categories and responses
+
+Each category can be tuned separately, so you do not have to use one global sensitivity level.
+
+- **Hate speech** can flag slurs, dehumanizing language, and abusive insults.
+- **Harassment** helps catch bullying and targeted abuse.
+- **Self-harm** can surface messages that may need urgent moderator attention.
+- **Sexual content** helps reduce explicit or unsafe content in member spaces.
+- **Violence** can detect threats or graphic violent language.
+
+For each category, you can adjust the sensitivity slider, choose whether flagged messages should be deleted, and define escalation rules for repeat offenses.
+
+<ImageCarousel size="sm">
+  <CarouselSlide src="/assets/images/dashboard/security-ai-moderation-2.png" alt="AI-Moderation Page (1)" />
+  <CarouselSlide src="/assets/images/dashboard/security-ai-moderation-3.png" alt="AI-Moderation Page (2)" />
+</ImageCarousel>
+
+### Escalation rules
+
+Escalation rules convert repeated AI moderation detections into staff actions.
+
+- Set an infraction threshold for the rule.
+- Choose the time window used to count those infractions.
+- Pick a punishment such as timeout, kick, or ban.
+- Add a duration when the punishment supports one.
+- Use stricter rules only for categories where false positives are rare in your community.
+
+<Image src="/assets/images/dashboard/security-ai-moderation-3.png" alt="AI-Moderation Page" size="sm"/>
+
+## Recommended rollout
+
+<Steps>
+  <Step title="Start with logs">
+    Turn on logging first so you can see what would trigger before using harsher punishments or automatic deletions.
+  </Step>
+  <Step title="Whitelist trusted staff">
+    Add owners, lead admins, approved automation roles, and channels that should be excluded before enforcing protections.
+  </Step>
+  <Step title="Tighten thresholds">
+    After a few days of observing normal activity, adjust thresholds and AI sensitivity until they match your moderation pace.
+  </Step>
+</Steps>
+
+<Callout type="warning">
+  Aggressive thresholds or AI settings can punish legitimate activity. Start conservative, review detections regularly, then tighten settings after you understand your server's normal patterns.
+</Callout>

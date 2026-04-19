@@ -1,0 +1,74 @@
+---
+title: Moderation
+description: Review moderation actions, appeals, warning rules, and log settings.
+icon: fa-solid fa-gavel
+order: 9
+---
+
+The **Moderation** section keeps your enforcement workflow organized, searchable, and easier to review over time.
+
+<CardGrid>
+  <Card title="Commands" icon="fa-solid fa-terminal">
+    Review moderation tools and control how they are configured.
+  </Card>
+  <Card title="Punishments" icon="fa-solid fa-scale-balanced">
+    Search your case history and confirm what actions were taken.
+  </Card>
+  <Card title="Appeals" icon="fa-solid fa-reply">
+    Manage submitted appeals from one central view.
+  </Card>
+  <Card title="Warnings" icon="fa-solid fa-triangle-exclamation">
+    Turn repeat warnings into automatic escalation rules.
+  </Card>
+</CardGrid>
+
+## Commands
+
+Use the commands view to review the moderation tools available to your team.
+
+- Configure commands such as Ban, Unban, Tempban, Timeout, Untimeout, Kick, and Warn.
+- Decide whether a command should send a DM to the target.
+- Decide whether the original command message should be deleted.
+- Configure message-history deletion where the action supports it.
+- Set default reasons, response templates, and DM templates.
+- Add immune or bypass roles and users for commands that should not affect protected staff or trusted roles.
+
+<Image src="/assets/images/dashboard/moderation-commands.png" alt="Moderation Commands Page" size="sm"/>
+
+## Punishments and appeals
+
+The punishment log gives you a searchable history of actions taken in the server, while appeals help you review follow-up requests fairly.
+
+- Review punishment case numbers, users, action types, reasons, moderators, and dates.
+- Filter by user, action type, or status when researching a moderation history.
+- Open appeal entries to review case details.
+- Accept or deny appeals from the dashboard instead of tracking decisions in DMs or separate forms.
+
+<ImageCarousel size="sm">
+  <CarouselSlide src="/assets/images/dashboard/moderation-punishments.png" alt="Punishments Page" />
+  <CarouselSlide src="/assets/images/dashboard/moderation-appeals-1.png" alt="Appeals Page (1)" />
+  <CarouselSlide src="/assets/images/dashboard/moderation-appeals-2.png" alt="Appeals Page (2)" />
+</ImageCarousel>
+
+## Warning rules and settings
+
+Warning rules let you automate consequences as members accumulate warnings, and the settings area controls the rest of the moderation workflow.
+
+- Create up to five warning rules for warning milestones.
+- Use the **Escalate Punishment** toggle when a warning count should trigger a moderation action.
+- Configure warning rewards when roles should be granted after members reach specific warning counts.
+- Configure where logs should be sent.
+- Decide whether appeals are enabled and who can use them.
+- Set an appeal cooldown to reduce repeated submissions.
+- Manage roles and users allowed to submit appeals.
+- Add custom appeal questions if your staff needs more context from submitters.
+
+<ImageCarousel size="sm">
+  <CarouselSlide src="/assets/images/dashboard/moderation-warnings.png" alt="Warnings Page" />
+  <CarouselSlide src="/assets/images/dashboard/moderation-settings-1.png" alt="Moderation Settings Page (1)" />
+  <CarouselSlide src="/assets/images/dashboard/moderation-settings-2.png" alt="Moderation Settings Page (2)" />
+</ImageCarousel>
+
+<Callout type="warning">
+  Automatic warning escalations should be tested carefully. A rule that is too aggressive can punish members faster than your team intends.
+</Callout>

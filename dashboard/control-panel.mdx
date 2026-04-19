@@ -1,0 +1,63 @@
+---
+title: Control Panel
+description: Manage modules, command access, and dashboard permissions.
+icon: fa-solid fa-sliders
+order: 3
+---
+
+The **Control Panel** is where you decide which parts of the bot are active on your server and who is allowed to manage them.
+
+<CardGrid>
+  <Card title="Modules" icon="fa-solid fa-cubes">
+    Enable or disable feature groups and control where they can be used.
+  </Card>
+  <Card title="Commands" icon="fa-solid fa-terminal">
+    Fine-tune individual commands with channel, role, and alias controls.
+  </Card>
+  <Card title="Permissions" icon="fa-solid fa-key">
+    Decide which users or roles can access and configure the dashboard.
+  </Card>
+</CardGrid>
+
+## Modules
+
+Modules are the high-level feature groups for your server, such as moderation, leveling, or tickets.
+
+- Turn whole modules on or off when you do not need them.
+- Review modules such as Birthday, Boosterrole, Economy, Invites, LastFM, Leveling, Moderation, Music, Other, Security, Settings, Tickets, Utility, and Voice.
+- Expand a module to manage **Channel Exceptions**, **Role Exceptions**, and **User Exceptions**.
+- Choose whether commands are allowed everywhere except the listed channels, roles, or users, or only allowed for the listed targets.
+- Add multiple channels, roles, or users to each exception section when a module needs tighter routing.
+
+<Image src="/assets/images/dashboard/control-panel-modules.png" alt="Modules Page" size="sm"/>
+
+## Commands
+
+The commands view gives you more granular control than the modules page.
+
+- Disable individual commands without turning off the whole module.
+- Limit commands to the channels and roles that should be able to use them.
+- Expand command rows to configure channel, role, and user exceptions with the same allow-list or deny-list modes used by modules.
+- Add or remove custom aliases when your staff or members use different naming conventions.
+- Review commands grouped by module so you can tune one feature area at a time.
+
+<Image src="/assets/images/dashboard/control-panel-modules.png" alt="Commands Page" size="sm"/>
+
+## Permissions
+
+Use permissions to control who can access the dashboard and change your server configuration.
+
+- Review existing role and user entries in the permissions table.
+- Set permission levels such as Administrator or Moderator.
+- Edit, copy, or remove existing entries when staff responsibilities change.
+- Use **Add Target** to add a new role or user and assign the permission level they need.
+- Create narrower access rules when someone only needs part of the dashboard.
+
+<ImageCarousel size="sm">
+  <CarouselSlide src="/assets/images/dashboard/control-panel-permissions-1.png" alt="Permissions Page (1)" />
+  <CarouselSlide src="/assets/images/dashboard/control-panel-permissions-2.png" alt="Permissions Page (2)" />
+</ImageCarousel>
+
+<Callout type="warning">
+  Anyone with full dashboard administrator access can change critical settings. Review these entries carefully and keep access limited to trusted staff.
+</Callout>
